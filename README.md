@@ -1,19 +1,17 @@
-# Reflex
+# Next.js + Gatsby
 
-## Getting Started
+This is nextjs.org home page built with Gatsby and [Reflex](https://ui.reflexjs.org). 
 
-```sh
-gatsby new site reflexjs/gatsby-starter-base
-```
+## FAQ
 
-## Learn
+### Why?
 
-Visit [https://reflexjs.org/learn](https://reflexjs.org/learn) to get started with Gatsby and Reflex.
+Why not?
 
-## Blocks
+### Is Gatsby better than NextJS?
 
-Browse the blocks library at [https://reflexjs.org/library/blocks](https://reflexjs.org/library/blocks).
+No.
 
-## License
+### Is NextJS better than Gatsby?
 
-Licensed under the [MIT license](https://github.com/reflexjs/reflex/blob/master/LICENSE).
+No.
