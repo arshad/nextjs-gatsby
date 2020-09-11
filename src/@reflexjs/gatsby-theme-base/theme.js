@@ -120,6 +120,7 @@ export default {
 
       "&::before": {
         border: "5px solid transparent",
+        borderColor: "#EC4C34",
         borderImage:
           "linear-gradient(to bottom right, #EC6192 0%, #EC4C34 25%, #FFBD2B 50%, #57C754 75%, #53A1EB 100%)",
         borderImageSlice: 1,
