@@ -1,8 +1,136 @@
 ---
-title: Home
-excerpt: This is your home page.
+title: Next.js by Vercel - The React Framework for Production
+excerpt: The React Framework for Production
 ---
 
-<Block src="hero" bg="muted" />
+import { CompaniesSlider } from "../../src/companies-slider";
 
-<Block src="cards" />
+<Block src="callout" label="Hey!" url="https://twitter.com/arshadcn" mt="6">
+  This is the <Strong>Next.js</Strong> home page built with{" "}
+  <Strong>Gatsby</Strong> and <Strong>Reflex</Strong> because why not!{" "}
+  <Strong> — @arshadcn </Strong> →
+</Block>
+
+<Block
+  src="hero"
+  heading="The React Framework for Production"
+  text="Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. No config needed."
+>
+  <Grid col="1fr|repeat(2, auto)" gap="5" w="fit-content" mx="auto" mb="8">
+    <Button as="a" href="#" variant="primary">
+      Start learning
+    </Button>
+    <Button as="a" href="#" variant="default">
+      Documentation
+    </Button>
+  </Grid>
+  <Grid col="repeat(2, auto)" gap="5" w="fit-content" mx="auto" fontSize="md">
+    <A href="#" color="lead">
+      License: MIT
+    </A>
+    <A href="#">GitHub</A>
+  </Grid>
+</Block>
+
+<Block
+  src="slice"
+  heading="Why Next.js"
+  text="The world’s leading companies use and love Next.js"
+>
+  <Container>
+    <Grid col="1|2|3" gap="6">
+      <Block
+        src="card"
+        url="#"
+        heading="Zero Config"
+        description="Automatic compilation and bundling. Optimized for production from the start."
+      />
+      <Block
+        src="card"
+        url="#"
+        heading="Hybrid: SSG and SSR"
+        description="Pre-render pages at build time (SSG) or request time (SSR) in a single project."
+      />
+      <Block
+        src="card"
+        url="#"
+        heading="Incremental Static Generation"
+        description="Add and update statically pre-rendered pages incrementally after build time."
+      />
+      <Block
+        src="card"
+        url="#"
+        heading="TypeScript Support"
+        description="Automatic TypeScript configuration and compilation."
+      />
+      <Block
+        src="card"
+        url="#"
+        heading="Fast Refresh"
+        description="Fast, reliable live-editing experience, as proven at Facebook scale."
+      />
+      <Block
+        src="card"
+        url="#"
+        heading="File-system Routing"
+        description="Every component in the `pages` directory becomes a route."
+      />
+      <Block
+        src="card"
+        url="#"
+        heading="API Routes"
+        description="Optionally create API endpoints to provide backend functionality."
+      />
+      <Block
+        src="card"
+        url="#"
+        heading="Built-in CSS Support"
+        description="Create component-level styles with CSS modules. Built-in Sass support."
+      />
+      <Block
+        src="card"
+        url="#"
+        heading="Code-splitting and Bundling"
+        description="Optimized bundle splitting algorithm created by the Google Chrome team."
+      />
+    </Grid>
+    <P fontSize="sm" my="10" textAlign="center">
+      <Strong>And more</Strong>: Support for{" "}
+      <A href="#">environment variables</A>, <A href="#">preview mode</A>,{" "}
+      <A href="#">custom `head` tags</A>, <A href="#">automatic polyfills</A>,
+      and more.
+    </P>
+  </Container>
+</Block>
+
+<CompaniesSlider />
+
+<Block src="case-study" />
+
+<Block src="customers" />
+
+<Block
+  src="slice"
+  heading="Learn Next.js"
+  text="Learn Next.js step-by-step and earn points ✨."
+>
+  <Container>
+    <A href="#" d="block">
+      <Image
+        src="learn.png"
+        my="16"
+        boxShadow="medium"
+        maxW="976px"
+        rounded="sm"
+        overflow="hidden"
+      />
+    </A>
+    <Flexbox justifyContent="center">
+      <Button as="a" href="#" variant="primary" mx="auto">
+        Get Started
+      </Button>
+    </Flexbox>
+  </Container>
+</Block>
+
+<Block src="newsletter" />

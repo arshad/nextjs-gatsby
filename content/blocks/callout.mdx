@@ -1,0 +1,33 @@
+export const Callout = ({ url, label, children, ...props }) => (
+  <Flexbox maxW="720px" mx="auto">
+    <A
+      href={url}
+      d="inline-flex"
+      flexWrap="wrap"
+      bg="footer"
+      borderWidth="2px"
+      borderColor="borderLight"
+      rounded="8px"
+      p="10px"
+      fontSize="sm"
+      color="text"
+      hoverColor="text"
+      {...props}
+    >
+      <Span
+        background="linear-gradient(90deg, rgb(237, 98, 146) 25%, rgb(237, 87, 96) 87.5%)"
+        color="white"
+        rounded="5px"
+        fontWeight="bold"
+        textTransform="uppercase"
+        mr="3"
+        p="1px 8px"
+      >
+        {label}
+      </Span>
+      <Span w="100%|auto" mt="2|0">
+        {children}
+      </Span>
+    </A>
+  </Flexbox>
+);

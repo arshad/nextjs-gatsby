@@ -1,0 +1,8 @@
+export const Slice = ({ heading, text, children, ...props }) => (
+  <Section role="region" py="16|24|24" {...props}>
+    <Container>
+      <Block src="slice-header" heading={heading} text={text} />
+    </Container>
+    {children}
+  </Section>
+);

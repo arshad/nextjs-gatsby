@@ -1,10 +1,10 @@
-import { useSiteMetadata } from "@reflexjs/gatsby-theme-core"
+import { useSiteMetadata } from "@reflexjs/gatsby-theme-core";
 
 export const Copyright = ({ ...props }) => {
-  const { title } = useSiteMetadata()
+  const { title } = useSiteMetadata();
   return (
-    <P fontSize="sm" {...props}>
-      © {new Date().getFullYear()} {title}
+    <P fontSize="xs" color="#8c8c8c" {...props}>
+      Copyright © {new Date().getFullYear()} Vercel, Inc. All rights reserved.
     </P>
-  )
-}
+  );
+};

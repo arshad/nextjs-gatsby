@@ -1,0 +1,43 @@
+export const CustomerCard = ({
+  name,
+  image,
+  url = "#",
+  sizer = 0,
+  captionSize = "sm",
+  ...props
+}) => (
+  <A
+    href={url}
+    d="block"
+    w={`330px|330px|${220 + 36 * parseInt(sizer)}`}
+    rounded="sm"
+    boxShadow="rgba(0, 0, 0, 0.08) 0px 10px 20px, rgba(0, 0, 0, 0.1) 0px 5px 12px"
+    overflow="hidden"
+    position="relative"
+    mb="4|8|0"
+    sx={{
+      "&:hover": {
+        div: {
+          opacity: 1,
+        },
+      },
+    }}
+    {...props}
+  >
+    <Image src={image} />
+    <Div
+      backgroundColor="rgba(0, 0, 0, 0.8)"
+      p="4"
+      position="absolute"
+      bottom="0"
+      w="full"
+      opacity="0"
+      transition="opacity 0.6s ease 0s"
+      textAlign="center"
+    >
+      <H3 color="white" fontSize={captionSize} fontWeight="normal" m="0">
+        {name}
+      </H3>
+    </Div>
+  </A>
+);

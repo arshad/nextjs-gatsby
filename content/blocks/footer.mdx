@@ -1,5 +1,45 @@
-<Footer py="6">
-  <Container mt="20" textAlign="center">
-    <Block src="copyright" />
-  </Container>
-</Footer>
+import { useNav } from "@reflexjs/gatsby-theme-nav";
+export const FooterBlock = () => {
+  const [navItems] = useNav("footer");
+  return (
+    <Footer
+      pt="8"
+      pb="16"
+      bg="footer"
+      borderTopWidth="1px"
+      borderColor="borderLight"
+    >
+      <Container>
+        <Grid col={`1fr 1fr|repeat(${navItems.items.length}, 1fr)`}>
+          {navItems.items.map((item, index) => (
+            <NavItem item={item} key={index} />
+          ))}
+        </Grid>
+        <Div mt="12">
+          <Block src="vercel" color="text" hoverColor="text" />
+          <Block src="copyright" />
+        </Div>
+      </Container>
+    </Footer>
+  );
+};
+
+export const NavItem = ({ item }) => (
+  <Div>
+    <H4 fontSize="sm" fontWeight="medium" mt="4" mb="3">
+      {item.value}
+    </H4>
+    {item.items.map((link, index) => (
+      <P py="2|0" mt="0" mb="1" fontSize="sm" lineHeight="1.6" key={index}>
+        <A
+          href={link.url}
+          color="footerLink"
+          hoverColor="text"
+          textDecoration="none"
+        >
+          {link.value}
+        </A>
+      </P>
+    ))}
+  </Div>
+);

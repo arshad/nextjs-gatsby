@@ -1,97 +1,130 @@
-import { useSiteMetadata, useColorMode } from "@reflexjs/gatsby-theme-core"
+import { useSiteMetadata, useColorMode } from "@reflexjs/gatsby-theme-core";
+import { useNav } from "@reflexjs/gatsby-theme-nav";
 
 export const HeaderBlock = ({ ...props }) => {
-  const [showMenu, setShowMenu] = React.useState(false)
-  const navName = "header"
   return (
-    <Header
-      position={["sticky", "relative"]}
-      top="0"
-      bg="background"
-      zIndex="1000"
-      {...props}
-    >
-      <Container>
-        <Flexbox d={["none", "flex"]} justifyContent="space-between" py="1">
-          <Branding />
-          <NavMenu
-            name={navName}
-            gap={[0, 8, 14]}
-            ml={["auto", "auto"]}
-            mr="null|10"
-          />
-          <ModeToggle ml="0" />
-        </Flexbox>
-      </Container>
-      <Flexbox
-        d={["flex", "none"]}
-        flexDirection="column"
-        justifyContent="center"
+    <>
+      <Block src="banner">
+        <A href="#" color="white" fontSize="md" hoverColor="white">
+          <P d="inline-block|none" fontSize="sm">
+            Deploy <Strong>Next.js</Strong> in seconds →
+          </P>
+          <P d="none|inline-block">
+            Deploy <Strong>Next.js</Strong> on the platform it was made for →
+          </P>
+        </A>
+      </Block>
+      <Header
+        position="sticky"
+        top="0"
+        bg="background"
+        zIndex="1000"
+        {...props}
       >
-        <Flexbox
-          justifyContent="space-between"
-          w="full"
-          pl="4"
-          pr="1"
-          visibility={showMenu ? "hidden" : "visible"}
-          transition="all .15s ease-in"
-        >
-          <Branding />
-          <Button
-            variant="link"
-            outline="none"
-            onClick={() => setShowMenu(true)}
-          >
-            <Icon name="menu" size="7" />
-          </Button>
-        </Flexbox>
-        <Div
-          position="absolute"
-          zIndex="1000"
-          bg="background"
-          top="4"
-          left="4"
-          right="4"
-          px="4"
-          rounded="xl"
-          overflow="scroll"
-          boxShadow="3xl"
-          border="1px solid"
-          borderColor="border"
-          transform={`scale(${showMenu ? 1 : 0.95})`}
-          visibility={showMenu ? "visible" : "hidden"}
-          opacity={showMenu ? 1 : 0}
-          transition="all .25s ease-in"
-          transformOrigin="100% 0"
-          maxHeight="95vh"
-        >
-          <Flexbox justifyContent="space-between" w="full" py="2" px="0">
-            <Branding />
-            <Button variant="link" onClick={() => setShowMenu(false)} mr={-3}>
-              <Icon name="x" size="6" />
-            </Button>
-          </Flexbox>
-          <NavMenu name={navName} gap={[0, 8]} borderTopWidth="1px" />
-          <Flexbox py="4" justifyContent="space-between">
-            <ModeToggle ml="auto" />
-          </Flexbox>
-        </Div>
-      </Flexbox>
-    </Header>
-  )
-}
+        <Container>
+          <Nav py="4" d="block|none">
+            <Flexbox justifyContent="space-between" w="full" mb="4">
+              <Branding />
+              <Grid col="repeat(2, auto)" gap="2" ml="auto">
+                <Links />
+              </Grid>
+            </Flexbox>
+            <Flexbox justifyContent="space-between" w="full">
+              <Menu fontSize="sm" gap="4" />
+              <Github />
+            </Flexbox>
+          </Nav>
+          <Nav h="80px" d="none|flex" alignItems="center">
+            <Flexbox justifyContent="space-between" w="full">
+              <Branding />
+              <Menu ml="12" gap="14" />
+              <Grid col="repeat(3, auto)" gap="10" ml="auto">
+                <Links />
+                <Github />
+              </Grid>
+            </Flexbox>
+          </Nav>
+        </Container>
+      </Header>
+    </>
+  );
+};
 
 export const Branding = () => {
-  const { title } = useSiteMetadata()
+  const { title } = useSiteMetadata();
   return (
     <A href="/" fontSize="3xl" fontWeight="semibold" color="text">
-      {title}
+      <Svg
+        h="50|50|50"
+        w="auto|auto|auto"
+        viewBox="0 0 148 90"
+        version="1.1"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        transform="translate"
+        shapeRendering="auto"
+      >
+        <path
+          d="M34.992 23.495h27.855v2.219H37.546v16.699h23.792v2.219H37.546v18.334h25.591v2.219H34.992v-41.69zm30.35 0h2.96l13.115 18.334 13.405-18.334L113.055.207 83.1 43.756l15.436 21.429H95.46L81.417 45.683 67.316 65.185h-3.018L79.85 43.756 65.343 23.495zm34.297 2.219v-2.219h31.742v2.219h-14.623v39.47h-2.554v-39.47H99.64zM.145 23.495h3.192l44.011 66.003L29.16 65.185 2.814 26.648l-.116 38.537H.145v-41.69zm130.98 38.801c-.523 0-.914-.405-.914-.928 0-.524.391-.929.913-.929.528 0 .913.405.913.929 0 .523-.385.928-.913.928zm2.508-2.443H135c.019.742.56 1.24 1.354 1.24.888 0 1.391-.535 1.391-1.539v-6.356h1.391v6.362c0 1.808-1.043 2.849-2.77 2.849-1.62 0-2.732-1.01-2.732-2.556zm7.322-.08h1.379c.118.853.95 1.395 2.149 1.395 1.117 0 1.937-.58 1.937-1.377 0-.685-.521-1.097-1.708-1.377l-1.155-.28c-1.62-.38-2.36-1.166-2.36-2.487 0-1.602 1.304-2.668 3.26-2.668 1.82 0 3.15 1.066 3.23 2.58h-1.354c-.13-.828-.85-1.346-1.894-1.346-1.1 0-1.832.53-1.832 1.34 0 .642.472 1.01 1.64 1.284l.987.243c1.838.43 2.596 1.178 2.596 2.53 0 1.72-1.33 2.799-3.453 2.799-1.987 0-3.323-1.029-3.422-2.637z"
+          fill="#000"
+          fillRule="nonzero"
+        />
+      </Svg>
+      <VisuallyHidden>{title}</VisuallyHidden>
     </A>
-  )
-}
+  );
+};
+
+export const Menu = ({ fontSize = "md", ...props }) => {
+  const [navItems] = useNav("main");
+  return (
+    <Grid col={`repeat(${navItems.items.length}, auto)`} {...props}>
+      {navItems.items.map((navItem) => (
+        <Link
+          to={navItem.url}
+          key={navItem.value}
+          color="mute"
+          transition="color 0.2s ease"
+          fontSize={fontSize}
+          hoverColor="black"
+        >
+          {navItem.value}
+        </Link>
+      ))}
+    </Grid>
+  );
+};
+
+export const Links = () => (
+  <>
+    <Button as="a" href="/" variant="primary sm" boxShadow="none">
+      Learn
+    </Button>
+    <Button as="a" href="/" variant="rainbow sm" px="5">
+      Next.js Conf
+    </Button>
+  </>
+);
+
+export const Github = () => (
+  <A
+    href="https://github.com/arshad/nextjs-gatsby"
+    rel="noopener noreferrer"
+    color="mute"
+  >
+    <Svg
+      role="img"
+      size="22px|22px|22px"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+    >
+      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+    </Svg>
+  </A>
+);
 
 export const ModeToggle = ({ ...props }) => {
-  const [colorMode, setColorMode] = useColorMode()
+  const [colorMode, setColorMode] = useColorMode();
   return (
     <Button
       variant="icon"
@@ -104,5 +137,5 @@ export const ModeToggle = ({ ...props }) => {
       <Icon name={colorMode === "default" ? "sun" : "moon"} size="5" />
       <VisuallyHidden>Toggle mode</VisuallyHidden>
     </Button>
-  )
-}
+  );
+};

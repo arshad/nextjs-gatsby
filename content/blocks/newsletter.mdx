@@ -1,0 +1,67 @@
+<Section role="region" py="24">
+  <Container>
+    <Grid
+      col="1fr|1fr 0.8fr"
+      my="8"
+      alignItems="center"
+      textAlign="center|left"
+      px="8|0"
+    >
+      <Aside>
+        <H2
+          fontsize="3xl"
+          fontWeight="bold"
+          letterSpacing="-1"
+          mt="0"
+          mb="4"
+          lineHeight="1.3"
+        >
+          Next.js is getting better every day — don’t miss out on all the
+          action.
+        </H2>
+        <H3 fontsize="md" m="0" fontWeight="normal" lineHeight="1.8">
+          Join the Next.js newsletter and stay updated on new releases and
+          features, guides, and case studies.
+        </H3>
+      </Aside>
+      <Aside d="flex" justifyContent="center|flex-end" mt="8|0">
+        <Form maxW="240px">
+          <Flexbox position="relative">
+            <Label htmlFor="email" position="absolute" left="16px">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 15 11"
+                aria-label="closed email"
+              >
+                <g
+                  transform="translate(-598.000000, -418.000000) translate(560.000000, 404.000000) translate(23.000000, 0.000000) translate(15.000000, 13.000000) translate(0.000000, 1.000000)"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <rect x="0.5" y="0.5" width="14" height="10" rx="2"></rect>
+                  <path d="M1.175 1.135L7.5 5.5" stroke-linecap="square"></path>
+                  <path d="M14.04.912L7.5 5.5" stroke-linecap="square"></path>
+                </g>
+              </svg>
+              <VisuallyHidden>Email</VisuallyHidden>
+            </Label>
+            <Input
+              placeholder="you@domain.com"
+              id="email"
+              fontsize="sm"
+              h="38px"
+              lineHeight="27px"
+              pl="12"
+            />
+          </Flexbox>
+          <Button variant="secondary" mt="10px" w="full">
+            Subscribe
+          </Button>
+        </Form>
+      </Aside>
+    </Grid>
+  </Container>
+</Section>

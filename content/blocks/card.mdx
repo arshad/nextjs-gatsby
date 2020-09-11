@@ -1,0 +1,33 @@
+export const Card = ({ icon, heading, description, url, ...props }) => (
+  <Div
+    borderWidth="1px"
+    borderColor="borderLight"
+    rounded="5px"
+    p="6"
+    position="relative"
+    hoverBoxShadow="medium"
+    transition="box-shadow .2s ease,border .2s ease"
+    {...props}
+  >
+    <Link
+      href={url}
+      position="absolute"
+      w="full"
+      h="full"
+      top="0"
+      target="_blank"
+      rel="noopener"
+    >
+      <VisuallyHidden>{heading}</VisuallyHidden>
+    </Link>
+    <H3 fontSize="md" m="0">
+      {heading}
+    </H3>
+    <P my="3" fontSize="sm">
+      {description}
+    </P>
+    <Span color="primary" fontSize="sm">
+      Documentation →
+    </Span>
+  </Div>
+);

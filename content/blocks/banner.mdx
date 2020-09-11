@@ -1,0 +1,10 @@
+export const Banner = ({ children, ...props }) => (
+  <Div bg="black" color="white">
+    <Container>
+      <Flexbox h="50" justifyContent="space-between">
+        <Block src="vercel" color="white" hoverColor="white" />
+        {children}
+      </Flexbox>
+    </Container>
+  </Div>
+);

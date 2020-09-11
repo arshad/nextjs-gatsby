@@ -1,0 +1,14 @@
+export const SliceHeader = ({ heading, text, children, ...props }) => (
+  <Div textAlign="center" mt="4" mb="16">
+    {heading && (
+      <H2 fontsize="3xl" letterSpacing="-1" mt="0" mb="4" lineHeight="1.3">
+        {heading}
+      </H2>
+    )}
+    {text && (
+      <H3 color="lead" fontsize="md" m="0" fontWeight="normal">
+        {text}
+      </H3>
+    )}
+  </Div>
+);
