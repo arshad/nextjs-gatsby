@@ -15,7 +15,7 @@ export default {
     border: "#999999",
     borderLight: "#eaeaea",
     footer: "#fafafa",
-    footerLink: "#8c8c8c",
+    footerLink: "#545454",
   },
 
   radii: {
