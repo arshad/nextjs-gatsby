@@ -26,5 +26,8 @@ module.exports = {
         types: [`Page`],
       },
     },
+    {
+      resolve: "gatsby-plugin-preact",
+    },
   ],
 };
